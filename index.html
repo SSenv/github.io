@@ -186,6 +186,7 @@ nav {
         margin-top: 5px;
     }
 }
+    
     #hero {
   padding-top: 2rem; /* Adding top padding to the entire section */
   margin-top: 2rem; /* Additional margin at top of section */
@@ -1610,188 +1611,245 @@ nav {
             }
         }
         
-        #faq {
-  padding-top: 4rem; /* Adding top padding to the entire section */
-  margin-top: 2rem; /* Additional margin at top of section */
+/* CSS Code with darker backgrounds for better text visibility */
+.faq-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
 }
- 
-                .faq-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-            position: relative;
-            overflow: hidden;
-        }
 
-        .background-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 80% 10%, rgba(76, 175, 80, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 20% 80%, rgba(139, 195, 74, 0.05) 0%, transparent 20%);
-            opacity: 0.6;
-            z-index: -1;
-        }
+.background-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 80% 10%, rgba(76, 175, 80, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 20% 80%, rgba(139, 195, 74, 0.1) 0%, transparent 20%);
+    opacity: 0.6;
+    z-index: -1;
+}
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
 
-        .section-header h2 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #4CAF50, #8BC34A);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 15px;
-        }
+.section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 15px;
+    padding-top: 30px;
+}
 
-        .section-header p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: #ddd;
-            line-height: 1.6;
-        }
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        .faq-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+.faq-item {
+    background: rgba(32, 32, 32, 0.9); /* Much darker background */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
 
-        .faq-item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
+.faq-item:hover {
+    border-color: rgba(76, 175, 80, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
 
-        .faq-item:hover {
-            border-color: rgba(76, 175, 80, 0.3);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-        }
+.faq-question {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(40, 40, 40, 0.95); /* Darker question background */
+    border-bottom: 1px solid rgba(76, 175, 80, 0.1);
+    transition: all 0.3s ease;
+}
 
-        .faq-question {
-            padding: 20px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            background: rgba(255, 255, 255, 0.02);
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s ease;
-        }
+.faq-question h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff; /* White text for maximum contrast */
+    flex: 1;
+    margin: 0;
+}
 
-        .faq-question h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #fff;
-            flex: 1;
-        }
+.faq-toggle {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    background: rgba(76, 175, 80, 0.2); /* Slightly darker toggle background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    margin-left: 15px;
+}
 
-        .faq-toggle {
-            width: 30px;
-            height: 30px;
-            background: rgba(76, 175, 80, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            color: #4CAF50;
-            border: 1px solid rgba(76, 175, 80, 0.3);
-        }
+.faq-toggle i {
+    transition: transform 0.3s ease;
+}
 
-        .faq-toggle i {
-            transition: transform 0.3s ease;
-        }
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+    line-height: 1.6;
+    color: #ffffff;
+    background: rgba(32, 32, 32, 0.9); /* Darker answer background */
+}
 
-        .faq-answer {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            opacity: 0;
-            line-height: 1.6;
-            color: #bbb;
-        }
+.faq-answer p {
+    padding: 0 0 20px;
+}
 
-        .faq-answer p {
-            padding: 0 0 20px;
-        }
+.faq-item.active .faq-question {
+    border-bottom: 1px solid rgba(76, 175, 80, 0.3);
+    background: rgba(50, 70, 50, 0.95); /* Greenish dark background when active */
+}
 
-        .faq-item.active .faq-question {
-            border-bottom: 1px solid rgba(76, 175, 80, 0.2);
-            background: rgba(76, 175, 80, 0.05);
-        }
+.faq-item.active .faq-toggle {
+    background: rgba(76, 175, 80, 0.3);
+    transform: rotate(180deg);
+}
 
-        .faq-item.active .faq-toggle {
-            background: rgba(76, 175, 80, 0.2);
-            transform: rotate(180deg);
-        }
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    opacity: 1;
+    padding-top: 20px;
+}
 
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            opacity: 1;
-            padding-top: 20px;
-        }
-
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto 40px;
-            position: relative;
-        }
-
-        .search-box {
-            width: 100%;
-            padding: 15px 20px 15px 50px;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            color: white;
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .search-box:focus {
-            border-color: rgba(76, 175, 80, 0.5);
-            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #4CAF50;
-        }
-
-        @media (max-width: 768px) {
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-            
-            .faq-question h3 {
-                font-size: 1.1rem;
-            }
-        }
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 60px 15px;
+    }
     
+    .section-header {
+        margin-bottom: 40px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+        padding-top: 20px;
+    }
+    
+    .faq-container {
+        gap: 20px;
+    }
+    
+    .faq-question {
+        padding: 15px 20px;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-toggle {
+        width: 25px;
+        height: 25px;
+        min-width: 25px;
+    }
+    
+    .faq-answer {
+        padding: 0 20px;
+    }
+    
+    .faq-answer p {
+        font-size: 0.95rem;
+    }
+}
 
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .faq-question h3 {
+        font-size: 0.95rem;
+    }
+    
+    .faq-toggle {
+        margin-left: 10px;
+    }
+}
         
-        
+    /* Additional CSS to enhance the footer's mobile experience */
+@media (max-width: 640px) {
+  footer {
+    padding-bottom: 20px;
+  }
+  
+  footer h3 {
+    font-size: 1.1rem;
+  }
+  
+  footer .space-y-3 {
+    margin-bottom: 10px;
+  }
+  
+  footer a {
+    display: block;
+    padding: 5px 0;
+  }
+  
+  footer .flex.items-start {
+    align-items: flex-start;
+  }
+  
+  footer .flex.items-start i {
+    margin-top: 4px;
+  }
+  
+  /* Increase touch target size for better mobile usability */
+  footer a, 
+  footer .flex.items-center {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Add more space between sections */
+  footer .mb-6 {
+    margin-bottom: 2rem;
+  }
+  
+  /* Better spacing for the contact icons */
+  footer .fas {
+    min-width: 20px;
+    text-align: center;
+  }
+  
+  footer .border-t {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+}
+    
         </style>
 </head>
 
@@ -2708,172 +2766,178 @@ document.addEventListener('DOMContentLoaded', function() {
   
     
    
-            
-    <section id="faqs">
-      <div class="container">
-        <div class="section-title">
-            <h2>Frequently Asked Questions</h2>
+ <!---FAQ Section--->           
+<section id="faqs" class="faq-section">
+  <div class="background-pattern"></div>
+  <div class="container">
+    <div class="section-header">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What types of e-waste do you accept?</h3>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
         </div>
-        <div class="faq-items">
-            <div class="faq-item">
-                <div class="faq-question">What types of e-waste do you accept?</div>
-                <div class="faq-answer">
-                    <p>We accept all types of electronic waste including computers, laptops, servers, mobile phones, tablets, printers, copiers, televisions, refrigerators, air conditioners, washing machines, and other electronic appliances.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">How can I schedule an e-waste pickup?</div>
-                <div class="faq-answer">
-                    <p>You can schedule a pickup by calling us, sending us an email. We'll arrange a convenient time for collection.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Is my data safe when I dispose of my electronic devices?</div>
-                <div class="faq-answer">
-                    <p>Absolutely! We understand the importance of data security. Our certified data destruction services ensure complete wiping or physical destruction of storage media following international standards. We provide a Certificate of Data Destruction upon completion.</p>
-                </div>
-            </div>
-            
-            <!---recycling certificate
-            <div class="faq-item">
-                <div class="faq-question">What is EPR and how can you help my business comply?</div>
-                <div class="faq-answer">
-                    <p>Extended Producer Responsibility (EPR) is a policy approach that makes manufacturers responsible for the entire lifecycle of their products, including disposal and recycling. We provide comprehensive EPR compliance services including collection, recycling, documentation, and regulatory reporting to help businesses meet their legal obligations.</p>
-                </div>
-            </div> --->
-            
-            <div class="faq-item">
-                <div class="faq-question">Do you provide certificates for recycled e-waste?</div>
-                <div class="faq-answer">
-                    <p>Yes, we provide official Certificates of Recycling/Disposal for all e-waste processed through our facility. These certificates include details such as the type and quantity of waste, date of collection, and recycling method used, which can be used for compliance and sustainability reporting.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">What happens to the e-waste after collection?</div>
-                <div class="faq-answer">
-                    <p>After collection, we transport the e-waste to our CPCB-authorized facility where it undergoes a systematic process: registration and weighing, sorting by category, testing for potential reuse, dismantling, segregation of components, resource recovery, and responsible disposal of non-recyclable materials. Throughout this process, we maintain strict environmental and safety standards.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Are there any charges for e-waste collection?</div>
-                <div class="faq-answer">
-                    <p>Our pricing varies based on the type and quantity of e-waste, as well as your location. For certain high-value items, we may offer buyback options. Please contact our team for a customized quote. For large corporate clients, we offer special contract rates.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">How can my company benefit from your buyback program?</div>
-                <div class="faq-answer">
-                    <p>Our buyback program offers fair market value for functional/non-functional electronic equipment. This provides your company with financial returns on unused assets, reduces storage costs, ensures proper disposal, and contributes to your sustainability goals. All equipment undergoes secure data wiping before evaluation.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">What are your certifications and authorizations?</div>
-                <div class="faq-answer">
-                    <p>SS Envirocare is fully authorized by the Central Pollution Control Board (CPCB) and State Pollution Control Board (SPCB) for e-waste recycling.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">Do you conduct awareness programs on e-waste management?</div>
-                <div class="faq-answer">
-                    <p>Yes, we offer customized awareness programs for corporations, educational institutions, and communities on responsible e-waste management. These programs include presentations, workshops, and educational materials designed to promote sustainable practices and regulatory compliance.</p>
-                </div>
-            </div>
+        <div class="faq-answer">
+          <p>We accept all types of electronic waste including computers, laptops, servers, mobile phones, tablets, printers, copiers, televisions, refrigerators, air conditioners, washing machines, and other electronic appliances.</p>
         </div>
-    </section>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How can I schedule an e-waste pickup?</h3>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>You can schedule a pickup by calling us, sending us an email. We'll arrange a convenient time for collection.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Is my data safe when I dispose of my electronic devices?</h3>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>Absolutely! We understand the importance of data security. Our certified data destruction services ensure complete wiping or physical destruction of storage media following international standards. We provide a Certificate of Data Destruction upon completion.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Do you provide certificates for recycled e-waste?</h3>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, we provide official Certificates of Recycling/Disposal for all e-waste processed through our facility. These certificates include details such as the type and quantity of waste, date of collection, and recycling method used, which can be used for compliance and sustainability reporting.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What happens to the e-waste after collection?</h3>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>After collection, we transport the e-waste to our CPCB-authorized facility where it undergoes a systematic process: registration and weighing, sorting by category, testing for potential reuse, dismantling, segregation of components, resource recovery, and responsible disposal of non-recyclable materials. Throughout this process, we maintain strict environmental and safety standards.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Are there any charges for e-waste collection?</h3>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>Our pricing varies based on the type and quantity of e-waste, as well as your location. For certain high-value items, we may offer buyback options. Please contact our team for a customized quote. For large corporate clients, we offer special contract rates.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>How can my company benefit from your buyback program?</h3>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>Our buyback program offers fair market value for functional/non-functional electronic equipment. This provides your company with financial returns on unused assets, reduces storage costs, ensures proper disposal, and contributes to your sustainability goals. All equipment undergoes secure data wiping before evaluation.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>What are your certifications and authorizations?</h3>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>SS Envirocare is fully authorized by the Central Pollution Control Board (CPCB) and State Pollution Control Board (SPCB) for e-waste recycling.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Do you conduct awareness programs on e-waste management?</h3>
+          <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, we offer customized awareness programs for corporations, educational institutions, and communities on responsible e-waste management. These programs include presentations, workshops, and educational materials designed to promote sustainable practices and regulatory compliance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       <script>
-// JavaScript for the FAQ Section
+// JavaScript for accordion-style FAQ functionality
 document.addEventListener('DOMContentLoaded', function() {
-  // Get all FAQ question elements
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  
-  // Add click event listener to each question
-  faqQuestions.forEach(question => {
-    question.addEventListener('click', function() {
-      // Get the parent FAQ item
-      const faqItem = this.parentElement;
-      
-      // Toggle the 'active' class on the FAQ item
-      faqItem.classList.toggle('active');
-      
-      // Get all other FAQ items
-      const allFaqItems = document.querySelectorAll('.faq-item');
-      
-      // Close other open FAQ items (optional - for accordion style)
-      allFaqItems.forEach(item => {
-        if (item !== faqItem && item.classList.contains('active')) {
-          item.classList.remove('active');
-        }
-      });
+    // Toggle FAQ items with accordion functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Close all other open FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            item.classList.toggle('active');
+        });
     });
-  });
 });
 </script>
 
-  <footer class="bg-green-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- About Us -->
-        <div>
-          <h3 class="text-xl font-bold mb-4">SS EnviroCare Private Limited</h3>
-          <p class="text-gray-300 mb-4">
-            Committed to responsible e-waste recycling and sustainable environmental solutions. Making our planet cleaner, one device at a time.
-          </p>
-          
-        </div>
-        
-
-        
-        <!-- Services -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Our Services</h3>
-          <ul class="space-y-2">
-            <li><a href="#services" class="text-gray-300 hover:text-white">E-Waste Collection</a></li>
-            <li><a href="#services" class="text-gray-300 hover:text-white">Data Destruction</a></li>
-            <li><a href="#services" class="text-gray-300 hover:text-white">Corporate Recycling</a></li>
-            <li><a href="#services" class="text-gray-300 hover:text-white">EPR Compliance</a></li>
-            <li><a href="#services" class="text-gray-300 hover:text-white">Awareness Programs</a></li>
-          </ul>
-        </div>
-        
-        <!-- Contact Info -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start">
-              <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-400"></i>
-              <span>84, Marudhar Nagar, Ajmer Road, Jaipur, Rajasthan - 302021</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-phone-alt mr-3 text-green-400"></i>
-              <span>+91 96544 63036</span>
-            </li>
-            <li class="flex items-center">
-              <i class="fas fa-envelope mr-3 text-green-400"></i>
-              <span>info@ssenvirocare.com</span>
-            </li>
-            
-          </ul>
-        </div>
+ <footer class="bg-green-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- About Us -->
+      <div class="mb-6 sm:mb-0">
+        <h3 class="text-xl font-bold mb-4">SS EnviroCare Private Limited</h3>
+        <p class="text-white mb-4">
+          Committed to responsible e-waste recycling and sustainable environmental solutions. Making our planet cleaner, one device at a time.
+        </p>
       </div>
       
-      
-      
-      <!-- Bottom Bar -->
-      <div class="mt-8 border-t border-green-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-300 text-sm">&copy; 2025 SS Envirocare Private Limited. All rights reserved.</p>
-        <div class="mt-4 md:mt-0">
-          
-        </div>
+      <!-- Services -->
+      <div class="mb-6 sm:mb-0">
+        <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+        <ul class="space-y-3">
+          <li><a href="#services" class="text-white hover:text-green-300 transition-colors">E-Waste Collection</a></li>
+          <li><a href="#services" class="text-white hover:text-green-300 transition-colors">Data Destruction</a></li>
+          <li><a href="#services" class="text-white hover:text-green-300 transition-colors">Corporate Recycling</a></li>
+          <li><a href="#services" class="text-white hover:text-green-300 transition-colors">EPR Compliance</a></li>
+          <li><a href="#services" class="text-white hover:text-green-300 transition-colors">Awareness Programs</a></li>
+        </ul>
       </div>
       
-      
+      <!-- Contact Info -->
+      <div class="col-span-1 sm:col-span-2 lg:col-span-2">
+        <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-400"></i>
+            <span>84, Marudhar Nagar, Ajmer Road, Jaipur, Rajasthan - 302021</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-phone-alt mr-3 text-green-400"></i>
+            <a href="tel:+919654463036" class="hover:text-green-300 transition-colors">+91 96544 63036</a>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-envelope mr-3 text-green-400"></i>
+            <a href="mailto:info@ssenvirocare.com" class="hover:text-green-300 transition-colors">info@ssenvirocare.com</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </footer>
+    
+    <!-- Bottom Bar -->
+    <div class="mt-8 border-t border-green-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-white text-sm text-center md:text-left">&copy; 2025 SS Envirocare Private Limited. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
