@@ -1714,14 +1714,25 @@
 
 <!--Hero Script -->
 <script>
-// Hero Counter Animation
+  // Hero Counter Animation
 document.addEventListener('DOMContentLoaded', function() {
+    // Track if counting has been completed for each element
+    const completedCounts = new Set();
+    
     // Function to animate counting
     function startCounting() {
         const statNumbers = document.querySelectorAll('.stat-number');
         
         statNumbers.forEach(number => {
+            // Check if this element has already completed counting
+            const elementId = number.getAttribute('id') || number.getAttribute('data-count');
+            if (completedCounts.has(elementId)) {
+                return; // Skip if already counted
+            }
+            
             const target = parseInt(number.getAttribute('data-count'));
+            if (isNaN(target)) return; // Skip if target is not a valid number
+            
             const duration = 2000; // 2 seconds
             const increment = target / 200; // Update roughly 100 times during animation
             
@@ -1741,12 +1752,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (current >= target) {
                     number.textContent = target <= 100 ? target + '%' : target.toLocaleString();
                     clearInterval(timer);
+                    // Mark this element as completed
+                    completedCounts.add(elementId);
                 }
             }, 10);
         });
     }
     
-    // For better user experience, use Intersection Observer API to start counting when visible
+    // Use Intersection Observer to trigger counting when hero is visible
     if ('IntersectionObserver' in window) {
         const heroSection = document.querySelector('.hero');
         const observer = new IntersectionObserver(
@@ -1754,7 +1767,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         startCounting();
-                        observer.unobserve(entry.target);
                     }
                 });
             },
@@ -1764,7 +1776,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (heroSection) {
             observer.observe(heroSection);
         } else {
-            // Fallback if observer doesn't work
+            // Fallback if hero section not found
             startCounting();
         }
     } else {
@@ -1784,7 +1796,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 </script>
+
+
+
     
     <!-- About Section -->
 <section id="about">
