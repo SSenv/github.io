@@ -80,24 +80,49 @@ nav {
     position: relative;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
-
-.logo:hover {
-    transform: perspective(500px) rotateY(10deg);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 
-                -1px -1px 2px rgba(255, 255, 255, 0.8);
-}
-
-.logo span {
-    color: var(--secondary);
-}
+        .logo-container {
+            position: relative;
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .leaf-logo {
+            height: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .text-container {
+            position: relative;
+            overflow: hidden;
+            margin-left: 10px; 
+            height: 50px;
+            display: flex;
+            align-items: center;
+            
+            
+        }
+        
+        .text-logo {
+            height: 22px;
+            position: relative;
+            transform: translateX(-100%);
+            animation: slideOut 3s forwards 1s;
+            
+        }
+        
+        @keyframes slideOut {
+            0% {
+                transform: translateX(-100%);
+            }
+            60% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
 
 /* Hamburger menu styling */
 .hamburger-menu {
@@ -186,8 +211,18 @@ nav {
     }
     
     /* Better position for very small screens */
-    .logo {
-        font-size: 20px;
+  
+    .leaf-logo {
+            height: 35px;
+    }
+    
+     .text-logo {
+            height: 20px;
+    }    
+    
+    .text-container {
+     margin-left: 5px; 
+    
     }
 }
 
@@ -1874,7 +1909,12 @@ nav {
     <header>
     <div class="container">
         <nav>
-            <div class="logo">SS <span>Envirocare</span></div>
+    <div class="logo-container">
+        <img src="https://assets.onecompiler.app/43fm2cd6f/43g2yn39v/SSEC%20Logo%20Light%20250x250.png" alt="Leaf Logo" class="leaf-logo">
+        <div class="text-container">
+            <img src="https://assets.onecompiler.app/43fm2cd6f/43g2yn39v/SSEC%20Text%20Logo%201.png" alt="SSEnvirocare Text" class="text-logo">
+        </div>
+    </div>
             
             <button class="hamburger-menu">
                 <i class="fas fa-bars"></i>
@@ -1894,7 +1934,13 @@ nav {
 
 <!-- JavaScript remains the same -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+  
+          // This would be replaced with your actual logo images when implemented
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation plays automatically on page load
+            console.log('Logo animation started');
+        });
+// document.addEventListener('DOMContentLoaded', function() {
     // Hamburger menu toggle
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
@@ -1993,14 +2039,14 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
     
-    <!-- Scroll Indicator - Positioned to not interfere with stats -->
+    <!-- Scroll Indicator - Positioned to not interfere with stats 
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
         <a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
         </a>
-    </div>
+    </div> -->
 </section>
 
     
@@ -2047,7 +2093,9 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="hero-scroll-indicator">
         <span class="scroll-text">Scroll Down</span>
-        <div class="scroll-arrow"></div>
+        <div class="scroll-arrow">
+
+        </div>
     </div>
 </section>
 
