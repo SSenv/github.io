@@ -1464,6 +1464,291 @@ nav {
             line-height: 1.6;
         }
 
+.clients-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.clients-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(76, 175, 80, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(139, 195, 74, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 50% 50%, rgba(0, 150, 136, 0.03) 0%, transparent 30%);
+    z-index: -1;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 15px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #302f2f;
+    line-height: 1.6;
+}
+
+/* Moving Logo Strip */
+.logo-strip-container {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px 0;
+    margin-bottom: 60px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo-strip-container::before,
+.logo-strip-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logo-strip-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(249, 250, 251, 1), rgba(249, 250, 251, 0));
+}
+
+.logo-strip-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(249, 250, 251, 1), rgba(249, 250, 251, 0));
+}
+
+.logo-strip {
+    display: flex;
+    width: calc(200px * 16); /* 8 logos * 2 sets * 200px each */
+    animation: scroll-logos 30s linear infinite;
+}
+
+.logo-strip:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-logos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 8)); /* Move by width of one complete set */
+    }
+}
+
+.logo-item {
+    flex: 0 0 200px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.client-logo {
+    max-width: 150px;
+    max-height: 80px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.6) contrast(0.8);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%) brightness(1) contrast(1) saturate(1.2);
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
+    border-radius: 8px;
+}
+
+/* Testimonials Section */
+.testimonials-container {
+    margin-top: 80px;
+}
+
+.testimonials-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-content {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: #4CAF50;
+    opacity: 0.3;
+    position: absolute;
+    top: -10px;
+    left: -5px;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-left: 25px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.author-info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 3px;
+}
+
+.author-info p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .clients-section {
+        padding: 60px 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .section-header p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .logo-strip-container {
+        padding: 20px 0;
+    }
+    
+    .logo-strip {
+        animation-duration: 25s; /* Slightly faster on mobile */
+    }
+    
+    .logo-item {
+        flex: 0 0 180px;
+        height: 100px;
+        padding: 15px;
+    }
+    
+    .client-logo {
+        max-width: 130px;
+        max-height: 70px;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .testimonials-title {
+        font-size: 1.8rem;
+    }
+    
+    .testimonial-card {
+        padding: 25px 20px;
+    }
+    
+    .logo-strip-container::before,
+    .logo-strip-container::after {
+        width: 50px;
+    }
+}
+
+/* Additional tweaks for very small screens */
+@media (max-width: 480px) {
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .logo-item {
+        flex: 0 0 160px;
+        height: 90px;
+    }
+    
+    .client-logo {
+        max-width: 110px;
+        max-height: 60px;
+    }
+    
+    .logo-strip {
+        animation-duration: 20s;
+    }
+}
+
+/* Pause animation on reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .logo-strip {
+        animation: none;
+    }
+}
 
         .contact-container {
             display: flex;
@@ -1910,9 +2195,9 @@ nav {
     <div class="container">
         <nav>
     <div class="logo-container">
-        <img src="https://assets.onecompiler.app/43fm2cd6f/43g2yn39v/SSEC%20Logo%20Light%20250x250.png" alt="Leaf Logo" class="leaf-logo">
+        <img src="https://uploads.onecompiler.io/43fm2cd6f/43g2yn39v/SSEC%20Logo%20Light%20250x250.png" alt="Leaf Logo" class="leaf-logo">
         <div class="text-container">
-            <img src="https://assets.onecompiler.app/43fm2cd6f/43g2yn39v/SSEC%20Text%20Logo%201.png" alt="SSEnvirocare Text" class="text-logo">
+            <img src="https://uploads.onecompiler.io/43fm2cd6f/43g2yn39v/SSEC%20Text%20Logo%201.png" alt="SSEnvirocare Text" class="text-logo">
         </div>
     </div>
             
@@ -2337,7 +2622,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- E-Waste Collection -->
         <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
           <div class="relative h-56">
-            <img src="https://assets.onecompiler.app/43fm2cd6f/43fm36v28/Ewaste%20collection.png" alt="E-Waste Collection" class="w-full h-full object-cover">
+            <img src="https://uploads.onecompiler.io/43fm2cd6f/43fm36v28/Ewaste%20collection.png" alt="E-Waste Collection" class="w-full h-full object-cover">
             <div class="absolute inset-0 overlay-gradient flex items-end">
               <div class="p-4 text-white">
                 <div class="bg-green-600 rounded-full w-12 h-12 flex items-center justify-center service-icon mb-2">
@@ -2359,7 +2644,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Reverse Logistics -->
         <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
           <div class="relative h-56">
-            <img src="https://assets.onecompiler.app/43fm2cd6f/43fm36v28/reverse%20logistics.png" alt="Reverse Logistics" class="w-full h-full object-cover">
+            <img src="https://uploads.onecompiler.io/43fm2cd6f/43fm36v28/reverse%20logistics.png" alt="Reverse Logistics" class="w-full h-full object-cover">
             <div class="absolute inset-0 overlay-gradient flex items-end">
               <div class="p-4 text-white">
                 <div class="bg-green-600 rounded-full w-12 h-12 flex items-center justify-center service-icon mb-2">
@@ -2381,7 +2666,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Dismantling & Recycling -->
         <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
           <div class="relative h-56">
-            <img src="https://assets.onecompiler.app/43fm2cd6f/43fm36v28/dismantling%20and%20recycling.png" alt="Dismantling & Recycling" class="w-full h-full object-cover">
+            <img src="https://uploads.onecompiler.io/43fm2cd6f/43fm36v28/dismantling%20and%20recycling.png" alt="Dismantling & Recycling" class="w-full h-full object-cover">
             <div class="absolute inset-0 overlay-gradient flex items-end">
               <div class="p-4 text-white">
                 <div class="bg-green-600 rounded-full w-12 h-12 flex items-center justify-center service-icon mb-2">
@@ -2403,7 +2688,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Data Destruction -->
         <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
           <div class="relative h-56">
-            <img src="https://assets.onecompiler.app/43fm2cd6f/43fm36v28/data%20destruction.png" alt="Data Destruction" class="w-full h-full object-cover">
+            <img src="https://uploads.onecompiler.io/43fm2cd6f/43fm36v28/data%20destruction.png" alt="Data Destruction" class="w-full h-full object-cover">
             <div class="absolute inset-0 overlay-gradient flex items-end">
               <div class="p-4 text-white">
                 <div class="bg-green-600 rounded-full w-12 h-12 flex items-center justify-center service-icon mb-2">
@@ -2425,7 +2710,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Corporate EPR Compliance -->
         <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="500">
           <div class="relative h-56">
-            <img src="https://assets.onecompiler.app/43fm2cd6f/43fm36v28/EPR.png" alt="Corporate EPR Compliance" class="w-full h-full object-cover">
+            <img src="https://uploads.onecompiler.io/43fm2cd6f/43fm36v28/EPR.png" alt="Corporate EPR Compliance" class="w-full h-full object-cover">
             <div class="absolute inset-0 overlay-gradient flex items-end">
               <div class="p-4 text-white">
                 <div class="bg-green-600 rounded-full w-12 h-12 flex items-center justify-center service-icon mb-2">
@@ -2447,7 +2732,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Buyback Programs -->
         <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="600">
           <div class="relative h-56">
-            <img src="https://assets.onecompiler.app/43fm2cd6f/43fm36v28/buyback.png" alt="Buyback Programs" class="w-full h-full object-cover">
+            <img src="https://uploads.onecompiler.io/43fm2cd6f/43fm36v28/buyback.png" alt="Buyback Programs" class="w-full h-full object-cover">
             <div class="absolute inset-0 overlay-gradient flex items-end">
               <div class="p-4 text-white">
                 <div class="bg-green-600 rounded-full w-12 h-12 flex items-center justify-center service-icon mb-2">
@@ -2759,6 +3044,133 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </section>
     
+    <section class="clients-section">
+    <div class="section-header">
+        <h2>Our Trusted Clients</h2>
+        <p>We proudly serve a diverse portfolio of clients across industries, helping them achieve their sustainability goals through responsible e-waste management and EPR compliance.</p>
+    </div>
+    
+    <!-- Moving Logo Strip -->
+    <div class="logo-strip-container">
+        <div class="logo-strip">
+            <!-- First set of logos -->
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(2).png" alt="DCM Shriram" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(1).png" alt="Bharti Realty" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(5).png" alt="CP Plus" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/icfai-removebg-preview%20(1).png" alt="ICFAI" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(3).png" alt="Jaipur Metro" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(7).png" alt="Ensol" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(8).png" alt="PISL" class="client-logo">
+            </div>
+            
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(11).png	" alt="GMR" class="client-logo">
+            </div>
+            
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/logo%20maxop.png" alt="Maxop" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/logo%20kent.png" alt="Kent RO" class="client-logo">
+            </div>
+            <!--<div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/logo%20havells.webp" alt="Havells" class="client-logo">
+            </div>-->
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(9).png" alt="MGU" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/rpcb%20(1).png" alt="RPCB" class="client-logo">
+            </div>
+            
+            <!-- Duplicate set for seamless loop -->
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(2).png" alt="DCM Shriram" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(1).png" alt="Bharti Realty" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(5).png" alt="CP Plus" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/icfai-removebg-preview%20(1).png" alt="ICFAI" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(3).png" alt="Jaipur Metro" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(7).png" alt="Ensol" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(8).png" alt="PISL" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(9).png" alt="MGU" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/image%20(11).png	" alt="GMR" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/rpcb%20(1).png" alt="RPCB" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/logo%20maxop.png" alt="Maxop" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/logo%20kent.png" alt="Kent RO" class="client-logo">
+            </div>
+            <div class="logo-item">
+                <img src="https://uploads.onecompiler.io/43s8kp42k/43s8hxf6v/logo%20havells.webp" alt="Havells" class="client-logo">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Testimonials Section 
+    <div class="testimonials-container">
+        <h3 class="testimonials-title">What Our Clients Say</h3>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>"SS Envirocare is our trusted partner for e-waste management. Their professional approach and commitment to compliance give us complete peace of mind."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Director</h4>
+                        <p>Greewa Enzo Pvt Ltd</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>"The team at SS Envirocare consistently provides excellent service. Their secure data destruction processes and detailed reporting help us maintain our security and compliance requirements."</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>Facilities Manager</h4>
+                        <p>DHPL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  -->
     
     <!-- Clients Section 
     <section class="section clients" id="clients">
@@ -3016,7 +3428,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <ul class="space-y-4">
           <li class="flex items-start">
             <i class="fas fa-map-marker-alt mt-1 mr-3 text-green-400"></i>
-            <span>84, Marudhar Nagar, Ajmer Road, Jaipur, Rajasthan - 302021</span>
+            <span>E216 (B), RIA Sarna Dungar, Jaipur, Rajasthan - 302012</span>
           </li>
           <li class="flex items-center">
             <i class="fas fa-phone-alt mr-3 text-green-400"></i>
@@ -3024,7 +3436,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </li>
           <li class="flex items-center">
             <i class="fas fa-envelope mr-3 text-green-400"></i>
-            <a href="mailto:ms.dir@ssenvirocare.com" class="hover:text-green-300 transition-colors">ms.dir@ssenvirocare.in</a>
+            <a href="mailto:ms.dir@ssenvirocare.com" class="hover:text-green-300 transition-colors">info@ssenvirocare.in</a>
           </li>
         </ul>
       </div>
